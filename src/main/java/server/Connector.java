@@ -10,13 +10,13 @@ import java.util.LinkedList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import container.Container;
+import container.ServletContainer;
 
 public class Connector implements Runnable {
 
 	private static final int POOL_SIZE = Constants.POOL_SIZE;
 
-	private Container container;
+	private ServletContainer container;
 	private ExecutorService service;
 	private Deque<Processor> processors;
 
@@ -78,11 +78,11 @@ public class Connector implements Runnable {
 		return new Response(output);
 	}
 
-	public void setContainer(Container container) {
+	public void setContainer(ServletContainer container) {
 		this.container = container;
 	}
 
-	public Container getContainer() {
+	public ServletContainer getContainer() {
 		return container;
 	}
 

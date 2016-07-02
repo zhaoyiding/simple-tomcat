@@ -1,13 +1,13 @@
 package startup;
 
-import container.Container;
+import container.ServletContainer;
 import server.Connector;
 
 public class Bootstrap {
 
 	public static void main(String[] args) {
 		Connector connector = new Connector();
-		Container container = new Container();
+		ServletContainer container = new ServletContainer();
 		connector.setContainer(container);
 
 		connector.initialise();

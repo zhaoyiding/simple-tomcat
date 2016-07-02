@@ -15,6 +15,7 @@ public class Processor implements Runnable {
 	private Connector connector;
 	private Request request;
 	private Response response;
+	private StaticResourceProcessor srp = new StaticResourceProcessor();
 
 	public Processor(Connector connector) {
 		super();
@@ -44,9 +45,7 @@ public class Processor implements Runnable {
 				if (request.getRequestURI().startsWith("/servlet/")) {
 					connector.getContainer().invoke(requestFacade, responseFacade);
 				} else {
-					StaticResourceProcessor processor=
-							new StaticResourceProcessor();
-					processor.process(request, response);
+					srp.process(request, response);
 				}
 
 				if (!request.getProtocol().equals("HTTP/1.1")

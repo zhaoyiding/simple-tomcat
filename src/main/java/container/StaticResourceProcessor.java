@@ -6,6 +6,7 @@ import server.Request;
 import server.Response;
 
 public class StaticResourceProcessor {
+	
 	public void process(Request request,Response response) {
 		try {
 			response.sendStaticResource();
@@ -13,4 +14,5 @@ public class StaticResourceProcessor {
 			e.printStackTrace();
 		}
 	}
+	
 }
